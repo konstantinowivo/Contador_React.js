@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { UserCard } from './Greeting';
+// import { ButtonOnEvent} from '.ButtonOnEvent'
+import { Button } from './Button'
+import { TaskCard } from './Task'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -15,6 +18,12 @@ root.render(
     street: "guemes 300",
     city: "rosario",
   }}/>
+
+  <Button text='click me!' name='ivo'/>
+  <Button text='pay'/>
+  <Button text={3}/> 
+
+  <TaskCard ready={false}/>
 </>
 );
 

@@ -1,0 +1,18 @@
+// Prevenir el evento por defecto
+
+// Por defecto el evento "onSubmit" en html tiene la funcionalidad
+// de enviar los datos de un formulario a un servidor y se recarga el sitio.
+// Para evitar esto y poder manipular los datos de un formulario lo que podemos
+// hacer es lo siguiente, agregar la propiedad preventDefault() a nuestro evento "e"
+
+export function OnSubmitPreventDefault (){
+    return <div style={{background: 'pink'}}>
+        <form onSubmit={(e) => {
+            e.preventDefault()
+            console.log('enviado')
+        }}>
+            <h1>Enviar formulario</h1>
+            <button>enviar</button>
+        </form>
+    </div>
+}

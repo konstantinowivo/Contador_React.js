@@ -1,4 +1,4 @@
-// En este componente vamos a aplicar ESTILOS
+// ESTILOS
 
 // 1) podemos hacerlo inline, agregando dentro de las etiquetas ej: <div style={{background: '#000000', color: '#fff', padding: '20px'}}
 

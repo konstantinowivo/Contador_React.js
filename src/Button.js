@@ -1,6 +1,6 @@
-// En este componente vamos a usar prop-types:
+// PROP-TYPES
 
-// que es una manera de "restringir" el uso de diferentes
+// Es una manera de "restringir" el uso de diferentes
 // tipos de datos que no sean los esperados cómo parámetros
 // de props, o bien podemos definir props por default también..
 
@@ -26,16 +26,22 @@
 //     </button>
 // }
 
-// En el caso de querer añadir una prop por defecto 
+// En el caso de querer añadir una prop por defecto, en este caso name:
+
+// Button.defaultProps = {
+//     name: 'some User'
+// }
 
 
 import PropTypes from 'prop-types'
 
 export function Button({text, name}){
     console.log(text, name)
-    return <button>
+    return <div style={{background : "orange"}}>
+    <button>
         {text} - {name}
     </button>
+    </div>
 }
 
 Button.propTypes = {

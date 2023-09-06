@@ -1,0 +1,35 @@
+Vamos a aprender a trabajar con arreglos en React.js, para eso
+vamos a utilizar la página robohash, que nos brindará imagenes aleatorias, para nuestro array.
+Creamos una constante "names", que alojará un array de objetos,
+que es la forma en que generalmente recibimos datos desde el back-end.
+
+Lo que debemos hacer ahora es recorrer los mismos, para poder acceder a su contenido,
+eso vamos a realizar por medio de métodos de manipulación de arrays (forEach, filter, map, etc).
+Estos métodos es recorren el array y generar uno nuevo y sumado a una función, vamos a poder
+manipular dichos arrays para poder renderizarlos.
+
+Una vez realizada la lógica de renderizado, el sistema nos va a solicitar una propiedad "key", por
+cada elemento de nuestro array, esa propiedad va a ser el index o indice del mismo.
+
+
+const names = [
+    {
+        name: 'Pedro',
+        id: 1,
+        image: 'https://robohash.org/12'
+    },
+    {
+        name: 'Juan',
+        id: 2,
+        image: 'https://robohash.org/15'
+    }
+]
+
+
+const RenderNames = Names.forEach((name, index) =>{
+    return <div key={index}>
+        <h1>{name.name}</h1>
+        <p>{name.id}</p>
+        <img src={name.image}/>
+        </div>
+})

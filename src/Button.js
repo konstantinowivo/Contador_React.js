@@ -37,7 +37,7 @@ import PropTypes from 'prop-types'
 
 export function Button({text, name}){
     console.log(text, name)
-    return <div style={{background : "orange"}}>
+    return <div style={{border: 'red 5px solid', padding: '10px'}}>
     <button>
         {text} - {name}
     </button>

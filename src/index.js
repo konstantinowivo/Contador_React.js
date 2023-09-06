@@ -5,11 +5,14 @@ import { UserCard } from './Greeting';
 import { Button } from './Button'
 import { TaskCard } from './Task'
 // import { Saludar } from './Saludar';
-import { ButtonOnEvent, InputOnEvent } from './ButtonOnEvent'
+import { ButtonOnEvent } from './ButtonOnEvent'
 import { OnSubmitPreventDefault } from './FormPrevent';
-
+import { Posts } from './PostApiFetch'
+import { ModulosDeTerceros } from './ModulosDeTerceros';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+
 
 root.render(
 <>
@@ -41,9 +44,13 @@ root.render(
 
   {/* <Saludar/> */}
 
-  <InputOnEvent/>
   <ButtonOnEvent/>
   <OnSubmitPreventDefault/>
+
+  <Posts/>
+
+  <ModulosDeTerceros/>
+
 </>
 );
 

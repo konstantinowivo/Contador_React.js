@@ -6,7 +6,7 @@
 // hacer es lo siguiente, agregar la propiedad preventDefault() a nuestro evento "e"
 
 export function OnSubmitPreventDefault (){
-    return <div style={{background: 'pink'}}>
+    return <div style={{border: 'red 5px solid', padding: '10px'}}>
         <form onSubmit={(e) => {
             e.preventDefault()
             console.log('enviado')

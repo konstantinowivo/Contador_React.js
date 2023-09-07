@@ -1,0 +1,34 @@
+HOOK useEffect en React 
+
+Una vez hayamos establecido la lógica de nuestros estados [estadoActual, estadoActualizado],
+vamos a poder utilizar la función useEffect(), que es otro Hook de React.
+La función useEffect(), se ejecuta, cada vez que detecta un cambio en la función que lo contiene, 
+en este caso, InputState().
+La función useEffect(function(){console.log('render')}) recibe como parámetro otra función..
+
+Para poder evitar que ésta función se ejecute cada vez realicemos un cambio en nuestro componente, podemos
+agregar (, [counter]) al finalizar la lógica de la función e icluir, dentro de su array, cuál será la condición
+que deba suceder para que dicha función se ejecute, en este caso, sólo se ejecutará cuando el estado "counter" cambie
+
+export function InputState(){
+
+    const [mensaje, setMensaje] = useState('')
+
+    useEffect(() => {
+        console.log('render')
+    }, [])
+
+    return (
+        <div>
+            <input onChange={e =>{
+                setMensaje(e.target.value)
+            }}/>
+            <button onClick={()=>{
+                alert("el mensaje es:" + mensaje)
+            }}>
+            save
+            </button>
+            </div>
+    )
+}
+

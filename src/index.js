@@ -1,22 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { UserCard } from './Greeting';
+// import { UserCard } from './Greeting';
 // import { ButtonOnEvent} from '.ButtonOnEvent'
-import { Button } from './Button'
-import { TaskCard } from './Task'
+// import { Button } from './Button'
+// import { TaskCard } from './Task'
 // import { Saludar } from './Saludar';
-import { ButtonOnEvent } from './ButtonOnEvent'
-import { OnSubmitPreventDefault } from './FormPrevent';
-import { Posts } from './PostApiFetch'
-import { ModulosDeTerceros } from './ModulosDeTerceros';
+// import { ButtonOnEvent } from './ButtonOnEvent'
+// import { OnSubmitPreventDefault } from './FormPrevent';
+// import { Posts } from './PostApiFetch'
+// import { ModulosDeTerceros } from './ModulosDeTerceros';
+import { Contador } from './Counter';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
-
 root.render(
 <>
-  <UserCard
+  <Contador/>
+
+  {/* <UserCard
   name= "ivo Konstantinow"
   amount={3000}
   married={true}
@@ -42,7 +44,7 @@ root.render(
 
   <TaskCard ready={false}/>
 
-  {/* <Saludar/> */}
+  <Saludar/>
 
   <ButtonOnEvent/>
   <OnSubmitPreventDefault/>
@@ -50,6 +52,7 @@ root.render(
   <Posts/>
 
   <ModulosDeTerceros/>
+ */}
 
 </>
 );

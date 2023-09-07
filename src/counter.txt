@@ -1,0 +1,101 @@
+HOOK Estados y funciones actualizadoras del estado en React.
+
+Que pasaría si quisieramos realizar la modificación de un
+elemento en JS? por ejemplo, si quisieramos crear un contador
+bastaría con generar una variable dentro de una función con dos botones "sumar" y "restar" 
+(con sus respectivos manejadores de eventos), que a medida que los clickeamos 
+suman 1 a la variable o restan 1 a la variable. 
+
+export function Contador(){
+    let contador = 0
+    return (
+        <div>
+            <h1>Contador: {contador}</h1>
+            <button onClick={()=>{
+                contador = contador +1;
+            }} >Sumar</button>
+            <button onClick={()=>{
+            contador = contador -1;
+            }}>Restar</button>
+        </div>
+    )
+}
+
+Para luego renderizarlo dentro de root.render(...)
+
+
+Pero en este caso React no funciona de esta manera.
+No podemos modificar una variable.
+
+
+Lo primero que vamos a tener que hacer es:
+
+1) En nuestro archivo index.js, importamos una biblioteca de React, llamada useState
+
+import React, {useState} from 'react';
+
+Este biblioteca es, en realidad, una función, que si la analizamos por consola,
+nos devolverá un arreglo, con dos elementos [undefined, function].
+
+undefined = hace referencia al estado actual de la variable.
+Por ejemplo en nuestro caso, la variable contador, que en su estado "original",
+tiene un valor igual a 0.
+
+function = hace referencia a cuál será el nuevo valor de nuestro primer elemento, en el caso
+de sumar será (contador +1) en el caso de restar (contador -1).
+A esta función debemos asignarle, por convención, set + nombre del primer elemento.
+Quedaria entonces "setCounter".
+
+
+export function Contador(){
+
+    const [contador, setContador] = useState(estado original del contador, en este caso "0")
+
+    let contador = 0;
+    return (
+        <div>
+            <h1>Contador: {contador}</h1>
+            <button onClick={()=>{
+                setContador(contador + 1)
+            }} >Sumar</button>
+            <button onClick={()=>{
+             setContador(contador - 1)
+            }}>Restar</button>
+        </div>
+    )
+}
+
+
+HOOK useEffect en React 
+
+Una vez hayamos establecido la lógica de nuestros estados [estadoActual, estadoActualizado],
+vamos a poder utilizar la función useEffect(), que es otro Hook de React.
+La función useEffect(), se ejecuta, cada vez que detecta un cambio en la función que lo contiene, 
+en este caso, InputState().
+La función useEffect(function(){console.log('render')}) recibe como parámetro otra función..
+
+Para poder evitar que ésta función se ejecute cada vez realicemos un cambio en nuestro componente, podemos
+agregar (, [counter]) al finalizar la lógica de la función e icluir, dentro de su array, cuál será la condición
+que deba suceder para que dicha función se ejecute, en este caso, sólo se ejecutará cuando el estado "counter" cambie
+
+export function InputState(){
+
+    const [mensaje, setMensaje] = useState('')
+
+    useEffect(() => {
+        console.log('render')
+    }, [])
+
+    return (
+        <div>
+            <input onChange={e =>{
+                setMensaje(e.target.value)
+            }}/>
+            <button onClick={()=>{
+                alert("el mensaje es:" + mensaje)
+            }}>
+            save
+            </button>
+            </div>
+    )
+}

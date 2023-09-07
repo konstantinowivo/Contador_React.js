@@ -1,16 +1,3 @@
-// Creación de componentes mediante CLASES
-
-// 1) Para crear un objeto mediante una clase en React.js, vamos
-// a tener que importar un objeto componente desde 'react'.
-
-// 2) A continuación utilizamos la palabra reservada class antes del nombre de nuestro
-// componente, en este caso Saludar y extends Component. Recordamos que en la programación
-// orientada a objetos, todos los objetos heredan sus propoiedades de su componente padre, en
-// este caso el componente {Component} que importamos primeramente.
-
-// 3) Dentro de la función, para poder retornar un valor, usamos la palabra clave render() {} y dentro
-// del objeto, ahora sí return + la lógica de la función
-
 import {Component} from 'react'
 
 export class Saludar extends Component(){
